@@ -14,7 +14,7 @@ def chatbot():
     data = request.get_json()
     user_message = data.get('message', "")
 
-    bot_response = chatbot_model(user_message, max_length = 20, num_return_sequence=1)
+    bot_response = chatbot_model(user_message, max_length = 20, num_return_sequences=1)
     return jsonify({"response": bot_response[0]['generated_text']})
 
 if __name__ == '__main__':
